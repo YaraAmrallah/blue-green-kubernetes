@@ -50,9 +50,7 @@ pipeline {
 
         stage('Green Deployment'){
             steps {
-                withAWS(credentials:'aws-static'){
                     sh "kubectl apply -f k8s/Green/green-deployment.yaml && kubectl apply -f k8s/Green/test-service.yaml"
-                }
             }
         }
 
@@ -64,9 +62,7 @@ pipeline {
 
         stage('Switch Traffic To Green Deployment'){
             steps{
-                withAWS(credentials:'aws-static'){
                     sh "kubectl apply -f k8s/Green/green-service.yaml"
-                }
             }
         }
 
@@ -96,9 +92,7 @@ pipeline {
 
         stage('Blue Deployment'){
             steps {
-                withAWS(credentials:'aws-static'){
                     sh "kubectl apply -f k8s/Blue"
-                }
             }
         }
     }
