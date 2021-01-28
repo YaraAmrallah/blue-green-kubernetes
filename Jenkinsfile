@@ -20,9 +20,7 @@ pipeline {
 
         stage('Set K8S Context'){
             steps {
-                withAWS(credentials:'aws-static'){
                     sh "kubectl config set-context arn:aws:eks:us-east-2:430448871340:cluster/EKS-Cluster"
-                }
             }
         }
 
