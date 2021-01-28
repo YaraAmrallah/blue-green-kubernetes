@@ -50,19 +50,19 @@ pipeline {
 
         stage('Green Deployment'){
             steps {
-                    sh "kubectl apply -f k8s/Green/green-deployment.yaml && kubectl apply -f k8s/Green/test-service.yaml"
+                    sh "echo green"
             }
         }
 
         stage('Test Green Deployment'){
             steps{
-                input "Deploy to production?"
+                 sh "echo green"
             }
         }
 
         stage('Switch Traffic To Green Deployment'){
             steps{
-                    sh "kubectl apply -f k8s/Green/green-service.yaml"
+                     sh "echo green"
             }
         }
 
@@ -92,7 +92,7 @@ pipeline {
 
         stage('Blue Deployment'){
             steps {
-                    sh "kubectl apply -f k8s/Blue"
+                     sh "echo green"
             }
         }
     }
