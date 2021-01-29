@@ -56,7 +56,7 @@ pipeline {
 
         stage('Test Green Deployment'){
             steps{
-                input "Deploy to production?"
+                input "Test: Deploy to production?"
             }
         }
 
